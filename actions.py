@@ -90,13 +90,13 @@ class ChartConvertAction:
                     with open(os.path.join(temp_dir, chart_path), 'r', encoding='utf-8') as chart_file:
                         chart_content = chart_file.read()
                     chart_class = PJDLChart.generate_from_chart(chart_content, chart_type)
-                    if chart_class is PJDLChart:
+                    if isinstance(chart_class, PJDLChart):
                         chart_list.append([chart_class, chart_path])
                     else:
                         window.plainTextEdit.appendPlainText(f"已忽略{chart_path}，原因：{chart_class}")
                         continue
             for chart in chart_list:
-                window.comboBox.addItem(f'{chart[0].info} ({chart[1]})')
+                window.comboBox.addItems([f'{chart[0].info.strip()} ({chart[1]})'.strip()])
 
     @staticmethod
     def output_button_clicked(line_edit, input_line_edit):

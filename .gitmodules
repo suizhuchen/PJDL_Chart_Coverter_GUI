@@ -1,0 +1,6 @@
+[submodule "pjdl-chart-converter"]
+	path = pjdl-chart-converter
+	url = https://github.com/suizhuchen/pjdl-chart-converter.git
+[submodule "chart"]
+	path = chart
+	url = https://github.com/suizhuchen/pjdl-chart-converter.git
