@@ -38,6 +38,7 @@ class Ui_Form(object):
 
         self.lineEdit = LineEdit(Form)
         self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setDragEnabled(True)
         self.lineEdit.setReadOnly(True)
 
         self.horizontalLayout.addWidget(self.lineEdit)
@@ -60,6 +61,7 @@ class Ui_Form(object):
 
         self.lineEdit_2 = LineEdit(Form)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setDragEnabled(True)
         self.lineEdit_2.setReadOnly(True)
 
         self.horizontalLayout_3.addWidget(self.lineEdit_2)
@@ -117,9 +119,32 @@ class Ui_Form(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_6)
 
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.label_4 = BodyLabel(Form)
+        self.label_4.setObjectName(u"label_4")
+
+        self.horizontalLayout_5.addWidget(self.label_4)
+
+        self.lineEdit_3 = LineEdit(Form)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setDragEnabled(True)
+        self.lineEdit_3.setReadOnly(True)
+
+        self.horizontalLayout_5.addWidget(self.lineEdit_3)
+
+        self.toolButton_3 = ToolButton(Form)
+        self.toolButton_3.setObjectName(u"toolButton_3")
+
+        self.horizontalLayout_5.addWidget(self.toolButton_3)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_5)
+
         self.plainTextEdit = PlainTextEdit(Form)
         self.plainTextEdit.setObjectName(u"plainTextEdit")
         self.plainTextEdit.setReadOnly(True)
+        self.plainTextEdit.setMaximumBlockCount(0)
 
         self.verticalLayout.addWidget(self.plainTextEdit)
 
@@ -156,6 +181,9 @@ class Ui_Form(object):
         self.checkBox.setText(QCoreApplication.translate("Form", u"\u5c1d\u8bd5\u8f6c\u6362\u56fe\u7247\u4e3aJPG", None))
         self.checkBox_2.setText(QCoreApplication.translate("Form", u"\u5c1d\u8bd5\u8f6c\u6362\u97f3\u9891\u4e3aOGG", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"\u6b32\u8f6c\u6362\u8c31\u9762\u6587\u4ef6\uff1a", None))
+        self.label_4.setText(QCoreApplication.translate("Form", u"ffmpeg.exe \u4f4d\u7f6e\uff1a", None))
+        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("Form", u"\u82e5\u5f00\u542f\u8f6c\u6362\u97f3\u9891\u4e3aOGG\uff0c\u5219\u6b64\u9879\u5fc5\u586b\uff01\u9ed8\u8ba4\u4f1a\u5c1d\u8bd5\u8bfb\u53d6exe\u6587\u4ef6\u76ee\u5f55\u4e0b\u7684ffmpeg.exe", None))
+        self.toolButton_3.setText("")
         self.plainTextEdit.setPlaceholderText(QCoreApplication.translate("Form", u"\u6b64\u5904\u7528\u6765\u663e\u793a\u65e5\u5fd7", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb\u8f6c\u6362", None))
     # retranslateUi

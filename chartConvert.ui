@@ -28,6 +28,9 @@
      </item>
      <item>
       <widget class="LineEdit" name="lineEdit">
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
        <property name="readOnly">
         <bool>true</bool>
        </property>
@@ -56,6 +59,9 @@
      </item>
      <item>
       <widget class="LineEdit" name="lineEdit_2">
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
        <property name="readOnly">
         <bool>true</bool>
        </property>
@@ -140,9 +146,43 @@
     </layout>
    </item>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="BodyLabel" name="label_4">
+       <property name="text">
+        <string>ffmpeg.exe 位置：</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="LineEdit" name="lineEdit_3">
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>若开启转换音频为OGG，则此项必填！默认会尝试读取exe文件目录下的ffmpeg.exe</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="ToolButton" name="toolButton_3">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <widget class="PlainTextEdit" name="plainTextEdit">
      <property name="readOnly">
       <bool>true</bool>
+     </property>
+     <property name="maximumBlockCount">
+      <number>0</number>
      </property>
      <property name="placeholderText">
       <string>此处用来显示日志</string>
@@ -233,6 +273,8 @@
    <header>qfluentwidgets</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
