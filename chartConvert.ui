@@ -22,7 +22,7 @@
      <item>
       <widget class="BodyLabel" name="label">
        <property name="text">
-        <string>欲转换谱面包目录：</string>
+        <string>要转换谱面包目录：</string>
        </property>
       </widget>
      </item>
@@ -136,7 +136,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>欲转换谱面文件：</string>
+        <string>要转换谱面文件：</string>
        </property>
       </widget>
      </item>

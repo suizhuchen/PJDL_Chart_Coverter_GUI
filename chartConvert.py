@@ -20,6 +20,7 @@ from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLayout, QSizePolicy,
 
 from qfluentwidgets import (BodyLabel, CheckBox, ComboBox, LineEdit,
     PlainTextEdit, PrimaryPushButton, ToolButton)
+import resource_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -174,13 +175,13 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.label.setText(QCoreApplication.translate("Form", u"\u6b32\u8f6c\u6362\u8c31\u9762\u5305\u76ee\u5f55\uff1a", None))
+        self.label.setText(QCoreApplication.translate("Form", u"\u8981\u8f6c\u6362\u8c31\u9762\u5305\u76ee\u5f55\uff1a", None))
         self.toolButton.setText("")
         self.label_2.setText(QCoreApplication.translate("Form", u"\u8f6c\u6362\u540e\u66f2\u5305\u76ee\u5f55\uff1a", None))
         self.toolButton_2.setText("")
         self.checkBox.setText(QCoreApplication.translate("Form", u"\u5c1d\u8bd5\u8f6c\u6362\u56fe\u7247\u4e3aJPG", None))
         self.checkBox_2.setText(QCoreApplication.translate("Form", u"\u5c1d\u8bd5\u8f6c\u6362\u97f3\u9891\u4e3aOGG", None))
-        self.label_3.setText(QCoreApplication.translate("Form", u"\u6b32\u8f6c\u6362\u8c31\u9762\u6587\u4ef6\uff1a", None))
+        self.label_3.setText(QCoreApplication.translate("Form", u"\u8981\u8f6c\u6362\u8c31\u9762\u6587\u4ef6\uff1a", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"ffmpeg.exe \u4f4d\u7f6e\uff1a", None))
         self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("Form", u"\u82e5\u5f00\u542f\u8f6c\u6362\u97f3\u9891\u4e3aOGG\uff0c\u5219\u6b64\u9879\u5fc5\u586b\uff01\u9ed8\u8ba4\u4f1a\u5c1d\u8bd5\u8bfb\u53d6exe\u6587\u4ef6\u76ee\u5f55\u4e0b\u7684ffmpeg.exe", None))
         self.toolButton_3.setText("")

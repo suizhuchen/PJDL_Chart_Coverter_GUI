@@ -9,7 +9,6 @@ from qfluentwidgets import FluentIcon as FIF
 
 import actions
 from defineUI import ChartConvert
-import resource
 
 
 class Window(FluentWindow):
