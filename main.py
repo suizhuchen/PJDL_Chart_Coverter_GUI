@@ -21,6 +21,7 @@ class Window(FluentWindow):
         self.setWindowTitle('啊米浴啤酒道理谱儿面转换器')
         self.resize(1200, 800)
         self.titleBar.closeBtn.clicked.connect(lambda: actions.clear_exit())
+        # self.plainTextEdit.appendPlainText('PROJECT DAOLI Chart Converter v1.0.1')
 
     def define_sub_windows(self):
         self.ui_chart_convert = ChartConvert()

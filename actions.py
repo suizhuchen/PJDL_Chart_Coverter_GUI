@@ -22,6 +22,7 @@ ACCEPTABLE_INPUT_FILE_TYPES = [
 ACCEPTABLE_OUTPUT_FILE_TYPES = [
     {'Description': 'PJDL Chart File', 'Filter': 'pjdlc'},
     {'Description': 'Malody Chart File', 'Filter': 'mcz'},
+    {'Description': 'Osu! Mania Chart File', 'Filter': 'osz'},
 ]
 
 temp_dir = os.path.join(os.path.dirname(__file__), "temp")
@@ -137,7 +138,7 @@ class ChartConvertAction:
             file_name, file_ext = os.path.splitext(input_line_edit.text())
 
         file_path = open_file_dialog("选择你要保存谱面文件的位置：", ACCEPTABLE_OUTPUT_FILE_TYPES, dialog_type='save',
-                                     default_dir=file_name if file_name else '')
+                                     default_dir=file_name if file_name else '', allow_all_files=False)
         if file_path:
             line_edit.setText(file_path)
 
@@ -179,7 +180,7 @@ class ChartConvertAction:
                 return
             output_path = audio_path + '.ogg'
             ffmpeg.convert(window, audio_path, output_path)
-            os.remove(audio_path)
+            # os.remove(audio_path)
             audio_path = os.path.join(os.path.dirname(audio_path), 'song.ogg')
             if os.path.exists(audio_path):
                 os.remove(audio_path)
@@ -189,7 +190,7 @@ class ChartConvertAction:
         if window.checkBox.isChecked():
             cover_output_path = cover_path + '.jpg'
             CoverConvertAction.convert(window, cover_path, cover_output_path)
-            os.remove(cover_path)
+            # os.remove(cover_path)
             cover_path = os.path.join(os.path.dirname(cover_path), 'cover.jpg')
             if os.path.exists(cover_path):
                 os.remove(cover_path)
@@ -202,6 +203,9 @@ class ChartConvertAction:
         elif chart_ext == '.pjdlc':
             chart_content = chart_class.generate_to_chart('pjdl')
             file_name = 'chart.json'
+        elif chart_ext == '.osz':
+            chart_content = chart_class.generate_to_chart('osu')
+            file_name = 'chart.osu'
         else:
             throw_error(window, "不支持的输出文件类型", log_text_edit=window.plainTextEdit)
             return
