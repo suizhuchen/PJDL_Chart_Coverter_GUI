@@ -142,8 +142,49 @@ class Ui_Form(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_5)
 
+        self.horizontalLayout_10 = QHBoxLayout()
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.horizontalLayout_10.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
+        self.label_5 = BodyLabel(Form)
+        self.label_5.setObjectName(u"label_5")
+
+        self.horizontalLayout_10.addWidget(self.label_5)
+
+        self.lineEdit_4 = LineEdit(Form)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+
+        self.horizontalLayout_10.addWidget(self.lineEdit_4)
+
+        self.label_6 = BodyLabel(Form)
+        self.label_6.setObjectName(u"label_6")
+
+        self.horizontalLayout_10.addWidget(self.label_6)
+
+        self.lineEdit_5 = LineEdit(Form)
+        self.lineEdit_5.setObjectName(u"lineEdit_5")
+
+        self.horizontalLayout_10.addWidget(self.lineEdit_5)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_10)
+
+        self.plainTextEdit_2 = PlainTextEdit(Form)
+        self.plainTextEdit_2.setObjectName(u"plainTextEdit_2")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.plainTextEdit_2.sizePolicy().hasHeightForWidth())
+        self.plainTextEdit_2.setSizePolicy(sizePolicy1)
+
+        self.verticalLayout.addWidget(self.plainTextEdit_2)
+
         self.plainTextEdit = PlainTextEdit(Form)
         self.plainTextEdit.setObjectName(u"plainTextEdit")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.plainTextEdit.sizePolicy().hasHeightForWidth())
+        self.plainTextEdit.setSizePolicy(sizePolicy2)
         self.plainTextEdit.setReadOnly(True)
         self.plainTextEdit.setMaximumBlockCount(0)
 
@@ -180,11 +221,16 @@ class Ui_Form(object):
         self.label_2.setText(QCoreApplication.translate("Form", u"\u8f6c\u6362\u540e\u66f2\u5305\u76ee\u5f55\uff1a", None))
         self.toolButton_2.setText("")
         self.checkBox.setText(QCoreApplication.translate("Form", u"\u5c1d\u8bd5\u8f6c\u6362\u56fe\u7247\u4e3aJPG", None))
-        self.checkBox_2.setText(QCoreApplication.translate("Form", u"\u5c1d\u8bd5\u8f6c\u6362\u97f3\u9891\u4e3aOGG", None))
+        self.checkBox_2.setText(QCoreApplication.translate("Form", u"\u5c1d\u8bd5\u8f6c\u6362\u4e3a\u89c4\u8303\u97f3\u9891", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"\u8981\u8f6c\u6362\u8c31\u9762\u6587\u4ef6\uff1a", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"ffmpeg.exe \u4f4d\u7f6e\uff1a", None))
-        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("Form", u"\u82e5\u5f00\u542f\u8f6c\u6362\u97f3\u9891\u4e3aOGG\uff0c\u5219\u6b64\u9879\u5fc5\u586b\uff01\u9ed8\u8ba4\u4f1a\u5c1d\u8bd5\u8bfb\u53d6exe\u6587\u4ef6\u76ee\u5f55\u4e0b\u7684ffmpeg.exe", None))
+        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("Form", u"\u82e5\u5f00\u542f\u8f6c\u6362\u97f3\u9891\u9009\u9879\uff0c\u5219\u6b64\u9879\u5fc5\u586b\uff01\u9ed8\u8ba4\u4f1a\u5c1d\u8bd5\u8bfb\u53d6\u8f6f\u4ef6.exe\u6587\u4ef6\u76ee\u5f55\u4e0b\u7684ffmpeg.exe", None))
         self.toolButton_3.setText("")
+        self.label_5.setText(QCoreApplication.translate("Form", u"\u66f2\u4f5c\u8005\uff1a", None))
+        self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("Form", u"\u975ePJDL\u6a21\u5f0f\u53ef\u7528", None))
+        self.label_6.setText(QCoreApplication.translate("Form", u"\u96be\u5ea6\u540d\uff1a", None))
+        self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("Form", u"\u975ePJDL\u6a21\u5f0f\u53ef\u7528", None))
+        self.plainTextEdit_2.setPlaceholderText(QCoreApplication.translate("Form", u"\u6b64\u5904\u7528\u6765\u663e\u793a\u6b4c\u66f2\u4fe1\u606f\uff08\u4ec5PJDL\u6a21\u5f0f\u53ef\u7528\uff09", None))
         self.plainTextEdit.setPlaceholderText(QCoreApplication.translate("Form", u"\u6b64\u5904\u7528\u6765\u663e\u793a\u65e5\u5fd7", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb\u8f6c\u6362", None))
     # retranslateUi

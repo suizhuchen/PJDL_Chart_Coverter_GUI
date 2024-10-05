@@ -1,6 +1,5 @@
 from PySide6.QtWidgets import QWidget
 
-
 from qfluentwidgets import FluentIcon as FIF
 
 import actions
@@ -12,14 +11,19 @@ class ChartConvert(QWidget, Ui_ChartConvert):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        chartConvertAction = actions.ChartConvertAction(self)
+
         self.toolButton.setIcon(FIF.MORE)
-        self.toolButton.clicked.connect(lambda x: actions.ChartConvertAction.input_button_clicked(self))
+        self.toolButton.clicked.connect(lambda x: chartConvertAction.input_button_clicked())
         self.toolButton_2.setIcon(FIF.MORE)
         self.toolButton_2.clicked.connect(
-            lambda x: actions.ChartConvertAction.output_button_clicked(self.lineEdit_2, self.lineEdit))
+            lambda x: chartConvertAction.output_button_clicked())
         self.toolButton_3.setIcon(FIF.MORE)
         self.toolButton_3.clicked.connect(
-            lambda x: actions.ChartConvertAction.ffmpeg_button_clicked(self.lineEdit_3))
+            lambda x: chartConvertAction.ffmpeg_button_clicked())
         self.pushButton.clicked.connect(
-            lambda x: actions.ChartConvertAction.convert_button_clicked(self))
-        actions.try_get_ffmpeg_path(self)
+            lambda x: chartConvertAction.convert_button_clicked())
+        self.comboBox.currentIndexChanged.connect(
+            lambda x: chartConvertAction.chart_type_changed(x))
+        chartConvertAction.window_init()
