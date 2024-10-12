@@ -26,12 +26,12 @@ ACCEPTABLE_OUTPUT_FILE_TYPES = [
 ]
 
 UPDATE_INFO = '''
-PROJECT DAOLI Chart Converter V1.0.2
+PROJECT DAOLI Chart Converter V1.0.3
 本次更新内容：
-1. 修复：转换为Osu!Mania格式时，因TimimgPoint起始为负导致的转换错误，现在TimimgPoint起始为0。
-2. 修复：转换为Osu!Mania格式时，因对OGG支持不好导致的转换错误，现进行分情况处理，其他仍为OGG格式，Osu!Mania则转为mp3。
-3. 新增：对曲作者、难度名、歌曲信息进行操作（曲作者、难度名仅适用非PJDL格式，歌曲信息仅适用PJDL格式）。
-4. 优化：对转换过程代码规范化，优化代码结构。
+1. 修复：照片转换时转换失败的问题
+2. 修复：报错异常的问题
+
+碎碎念：报错异常是我没改以前的代码，导致输出框还在用一个别名的日志框。转换异常则是rgba通道无法直接转换到jpg，先把通道转换成rgb再转换格式。
 
 项目地址：https://github.com/suizhuchen/PJDL_Chart_Coverter_GUI
 本项目作者：随丶辰
@@ -82,8 +82,8 @@ class BaseAction:
 
     def throw_error(self, message):
         window = self.window
-        if window.log_text_edit:
-            window.log_text_edit.appendPlainText(f'错误：{message}')
+        if window.plainTextEdit:
+            window.plainTextEdit.appendPlainText(f'错误：{message}')
         InfoBar.error(
             title="错误",
             content=message,
@@ -103,7 +103,6 @@ class BaseAction:
 class ChartConvertAction(BaseAction):
     def __init__(self, window):
         super().__init__(window)
-        self.window = window
 
     def window_init(self):
         self.throw_info(UPDATE_INFO)
@@ -306,7 +305,6 @@ class AudioConvertAction(BaseAction):
     def __init__(self, ffmpeg_path, window):
         super().__init__(window)
         self.ffmpeg_path = ffmpeg_path
-        self.window = window
 
     def read_output(self, pipe, prefix):
         for line in iter(pipe.readline, ''):
@@ -359,7 +357,6 @@ class AudioConvertAction(BaseAction):
 class CoverConvertAction(BaseAction):
     def __init__(self, window):
         super().__init__(window)
-        self.window = window
 
     def convert(self, input_path, output_path):
         window = self.window
@@ -370,7 +367,7 @@ class CoverConvertAction(BaseAction):
             os.remove(output_path)
         self.throw_info(f"开始转换图片：{input_path}")
         try:
-            img = Image.open(input_path)
+            img = Image.open(input_path).convert('RGB')
             img.save(output_path)
             self.throw_info(f"图片转换完成：{output_path}")
         except Exception as e:

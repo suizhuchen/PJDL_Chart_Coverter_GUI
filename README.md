@@ -74,8 +74,6 @@ README文件模板：[Best_README_template](https://github.com/shaojintian/Best_
 
 <!-- links -->
 
-[your-project-path]:suizhuchen/PJDL_Chart_Coverter_GUI
-
 [contributors-shield]: https://img.shields.io/github/contributors/suizhuchen/PJDL_Chart_Coverter_GUI.svg?style=flat-square
 
 [contributors-url]: https://github.com/suizhuchen/PJDL_Chart_Coverter_GUI/graphs/contributors
